@@ -6,9 +6,13 @@ arayüz oluşturulmuştur. Veritabanı için
 SQL Server , SQLite ile bilgiler kalıcı
 olarak saklanmıştır.
 
+![GitHub Logo](https://github.com/nazankorkmaz/StudentManagementSystem/blob/main/resim/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-04-23%20235544.png)
+
 Öğrenci bilgi sistemi, öğrencilerin,
 öğretmenlerin ve derslerin yönetimini
 sağlayan bir masaüstü uygulamasıdır.
+
+![GitHub Logo](https://github.com/nazankorkmaz/StudentManagementSystem/blob/main/resim/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-04-24%20000056.png)
 
 Öğrenci bilgi sistemi ile öğretmenler
 veritabanına kayıt olabilirler ve kayıtlı
@@ -19,6 +23,8 @@ toplam öğrenci sayılarını da görebilirler.
 Burada hem kendi derslerini alan
 öğrencileri ve tüm kayıtlı öğrencilerini ,
 gerekli bilgilerini görebilirler.
+
+![GitHub Logo](https://github.com/nazankorkmaz/StudentManagementSystem/blob/main/resim/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-04-24%20001948.png)
 
 
 Sistemde kayıtlı olan öğrencilerden kendi
