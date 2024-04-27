@@ -1,5 +1,3 @@
-#https://www.youtube.com/watch?v=k9ICA7LDIZQ&list=PLUgFQtEcQLl_TmkNjA-UHg-PNABqTuXPb&index=53
-
 
 from tkinter import *
 from PIL import ImageTk, Image
@@ -13,7 +11,7 @@ import global_deg
 def login():
     try:
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                    'Server=****\***;' +
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
         cursor = connection.cursor()
@@ -83,7 +81,7 @@ def signInPage():
 
         try:
             connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                        'Server=KORKMAZ\SQLEXPRESS;' +
+                                        'Server=****\***;' +
                                         'Database=STUDENTMG_DB;' +
                                         'Trusted_Connection=True')
 
@@ -102,7 +100,7 @@ def signInPage():
             connection.close()
 
             connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                        'Server=KORKMAZ\SQLEXPRESS;' +
+                                        'Server=****\***;' +
                                         'Database=STUDENTMG_DB;' +
                                         'Trusted_Connection=True')
 
@@ -187,7 +185,7 @@ signInButton.place(relx=0.51, rely=0.82, anchor="w")
 
 try:
     connection= pyodbc.connect('DRIVER={SQL SERVER};'+
-                                    'Server=KORKMAZ\SQLEXPRESS;'+
+                                    'Server=****\***;'+
                                     'Database=STUDENTMG_DB;'+
                                     'Trusted_Connection=True')
     cursor = connection.cursor()
