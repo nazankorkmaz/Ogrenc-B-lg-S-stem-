@@ -1,15 +1,4 @@
-#https://www.youtube.com/watch?v=ohb-oknZQa8&list=PLUgFQtEcQLl_TmkNjA-UHg-PNABqTuXPb&index=56
 
-
-#oğrenci tablosu
-#öğretmen bilgi giriş ve tablosu
-#üstte öğretmen bilgileri
-#fakülte ve dersleri tablosu
-#ogrencilere  bolum ekle
-#bolum derslerine fakulte bilgisi ekle
-#fakulte tablosu yerleşke bilgisi bölümler olsun
-# ogrenci ogretmen fakulte bolum(dersler) 
-#hepsinin detaylarına bak ve chate sor
 
 import pyodbc
 from tkinter import *
@@ -54,7 +43,7 @@ def dersTabloGuncelle():
         dersATable.delete(child)
     try:
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                    'Server=****\***;' +
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
         cursor3 = connection.cursor()
@@ -81,7 +70,7 @@ def dersEkle():
         ders = nameEntry.get()
         try:
             connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                        'Server=KORKMAZ\SQLEXPRESS;' +
+                                       'Server=****\***;' +
                                         'Database=STUDENTMG_DB;' +
                                         'Trusted_Connection=True')
             cursor = connection.cursor()
@@ -126,7 +115,7 @@ def dersEklee():
         ders = nameEntry.get()
         try:
             connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                        'Server=KORKMAZ\SQLEXPRESS;' +
+                                        'Server=****\***;' +
                                         'Database=STUDENTMG_DB;' +
                                         'Trusted_Connection=True')
             cursor = connection.cursor()
@@ -161,7 +150,7 @@ def dersTablosu_yenile():
         dersTable.delete(child)
     try:
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                   'Server=****\***;'+
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
         cursor2 = connection.cursor()
@@ -227,7 +216,7 @@ def add_student():
         try:
             print("dersimiz :", ders)
             connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                        'Server=KORKMAZ\SQLEXPRESS;' +
+                                        'Server=****\***;'+
                                         'Database=STUDENTMG_DB;' +
                                         'Trusted_Connection=True')
 
@@ -237,7 +226,6 @@ def add_student():
             print(cursor)
             # Sonucu al
             ders_id = cursor.fetchone()
-            print("VURADAAAAA  ", ders_id)
             connection.close()
 
             # Ders ID'sini yazdır
@@ -270,7 +258,7 @@ def add_student():
 
             try:
                 connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                            'Server=KORKMAZ\SQLEXPRESS;' +
+                                            'Server=****\***;'+
                                             'Database=STUDENTMG_DB;' +
                                             'Trusted_Connection=True')
                 cursor = connection.cursor()
@@ -358,37 +346,14 @@ def searchStudent():
 
         try:
             connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                        'Server=KORKMAZ\SQLEXPRESS;' +
+                                        'Server=****\***;' +
                                         'Database=STUDENTMG_DB;' +
                                         'Trusted_Connection=True')
 
             # SQL sorgusu oluştur ve çalıştır
             cursor = connection.cursor()
 
-            """
-            SELECT O.OGRENCIID AS 'Öğrenci ID',
-                                     O.AD AS 'Öğrenci Adı',
-                                     O.SOYAD AS 'Öğrenci Soyadı',
-                                     O.EMAIL AS 'Öğrenci Email',
-                                     D.DERSAD AS 'Ders Adı',
-                                     N.NOTDEGERI AS 'Not'
-                             FROM OGRENCI O
-                             JOIN DERS D ON O.OGRETMENID = D.OGRETMENID
-                             JOIN NOTLAR N ON O.OGRENCIID = N.OGRENCIID AND D.DERSID = N.DERSID
-                             WHERE O.OGRENCIID = ? OR O.AD = ? OR O.SOYAD = ? OR O.EMAIL = ? OR D.DERSAD = ? OR N.NOTDEGERI = ?
-            """
-
-            """SELECT O.OGRENCIID AS 'Öğrenci ID',
-                   O.AD AS 'Öğrenci Adı',
-                   O.SOYAD AS 'Öğrenci Soyadı',
-                   O.EMAIL AS 'Öğrenci Email',
-                   D.DERSAD AS 'Ders Adı',
-                   N.NOTDEGERI AS 'Not'
-            FROM OGRENCI O
-            JOIN DERS D ON O.OGRETMENID = D.OGRETMENID
-            JOIN NOTLAR N ON O.OGRENCIID = N.OGRENCIID OR D.DERSID = N.DERSID
-            WHERE O.OGRENCIID = ? OR O.AD = ? OR O.SOYAD = ? OR O.EMAIL = ? OR D.DERSAD = ? OR N.NOTDEGERI = ?
-            """
+           
 
             """
                             SELECT O.OGRENCIID AS 'Öğrenci ID',
@@ -471,7 +436,7 @@ def deleteStudent():
     connection.close()
 
     connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                'Server=KORKMAZ\SQLEXPRESS;' +
+                                'Server=****\***;'+
                                 'Database=STUDENTMG_DB;' +
                                 'Trusted_Connection=True')
 
@@ -519,7 +484,7 @@ def updateStudent():
         lnameSelected = studentTable.item(studentTable.selection())['values'][2]
 
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                    'Server=****\***;' +
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
 
@@ -535,7 +500,7 @@ def updateStudent():
         connection.close()
 
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                    'Server=****\***;' +
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
 
@@ -602,7 +567,7 @@ def updateStudent():
         lnameSelected = studentTable.item(studentTable.selection())['values'][2]
 
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                    'Server=****\***;'+
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
 
@@ -659,7 +624,7 @@ def all_student():
         studentTable.delete(child)
     try:
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                   'Server=****\***;' +
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
         cursor = connection.cursor()
@@ -706,7 +671,7 @@ def my_student():
         xmail = global_deg.ogretmenin_maili
         print("xmail = ", xmail)
         connection = pyodbc.connect('DRIVER={SQL SERVER};' +
-                                    'Server=KORKMAZ\SQLEXPRESS;' +
+                                    'Server=****\***;' +
                                     'Database=STUDENTMG_DB;' +
                                     'Trusted_Connection=True')
         cursor = connection.cursor()
@@ -718,20 +683,7 @@ def my_student():
         JOIN DERS D ON N.DERSID = D.DERSID
         JOIN OGRETMEN T ON D.OGRETMENID = T.OGRETMENID
         WHERE T.EMAIL = (?)""",xmail)
-        """
-        cursor.execute("SELECT
-                O.OGRENCIID AS 'Öğrenci ID',
-                O.AD AS 'Öğrenci Adı',
-                O.SOYAD AS 'Öğrenci Soyadı',
-                O.EMAIL AS 'Öğrenci Email',
-                D.DERSAD AS 'Ders Adı',
-                N.NOTDEGERI AS 'Not'
-            FROM OGRENCI O
-            JOIN DERS D ON O.OGRETMENID = D.OGRETMENID
-            JOIN NOTLAR N ON O.OGRENCIID = N.OGRENCIID AND D.DERSID = N.DERSID
-            JOIN OGRETMEN T ON O.OGRETMENID = T.OGRETMENID
-            WHERE T.EMAIL = (?)", xmail)
-        """
+        
 
         for data in cursor:
             my_tuple = ()
@@ -953,7 +905,7 @@ try:
     xmail  = global_deg.ogretmenin_maili
     print("xmail = ",xmail)
     connection= pyodbc.connect('DRIVER={SQL SERVER};'+
-                                    'Server=KORKMAZ\SQLEXPRESS;'+
+                                   'Server=****\***;'+
                                     'Database=STUDENTMG_DB;'+
                                     'Trusted_Connection=True')
     cursor = connection.cursor()
@@ -1000,7 +952,7 @@ except pyodbc.Error as ex:
 
 try:
     connection= pyodbc.connect('DRIVER={SQL SERVER};'+
-                                    'Server=KORKMAZ\SQLEXPRESS;'+
+                                    'Server=****\***;'+
                                     'Database=STUDENTMG_DB;'+
                                     'Trusted_Connection=True')
     cursor2 = connection.cursor()
@@ -1030,7 +982,7 @@ except pyodbc.Error as ex:
 
 try:
     connection= pyodbc.connect('DRIVER={SQL SERVER};'+
-                                    'Server=KORKMAZ\SQLEXPRESS;'+
+                                    'Server=****\***;'+
                                     'Database=STUDENTMG_DB;'+
                                     'Trusted_Connection=True')
     cursor3 = connection.cursor()
@@ -1049,15 +1001,4 @@ except pyodbc.Error as ex:
     print("Failed! ", ex)
 
 
-
-
-#HOCAYA AİT ÖĞRENCİLERİ GÖSTERSİN------> BİR SUTUN TREVİEWDA OGRETMEN ADI OLSUN BUNLARI JOINLE GOSTERCEN GALIBA
-#Bİ TANE BUTON DA TÜM ÖĞRENCİLERİ GOR OLSUN
-
 root.mainloop()
-
-
-#öğrenci ara yap isim, soyisim, id olsun hangisini alırsa
-
-#ders sil uyarı çıksın bu dersi alan öğrenci notları silinecek diye
-#sonra notlardan sil
